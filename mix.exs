@@ -7,7 +7,14 @@ defmodule Elmarismayil.MixProject do
       version: "0.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
+      aliases: aliases(),
       deps: deps()
+    ]
+  end
+
+  defp aliases do
+    [
+      "site.build": ["build", "tailwind default --minify", "esbuild default --minify"]
     ]
   end
 
@@ -22,7 +29,9 @@ defmodule Elmarismayil.MixProject do
   defp deps do
     [
       {:nimble_publisher, "~> 0.1.3"},
-      {:phoenix_live_view, "~> 0.18.2"}
+      {:phoenix_live_view, "~> 0.18.2"},
+      {:esbuild, "~> 0.5"},
+      {:tailwind, "~> 0.1.8"}
     ]
   end
 end

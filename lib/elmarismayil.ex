@@ -37,6 +37,10 @@ defmodule Elmarismayil do
   def layout(assigns) do
     ~H"""
     <html>
+      <head>
+        <link rel="stylesheet" href="/assets/app.css" />
+        <script type="text/javascript" src="/assets/app.js" />
+      </head>
       <body>
         <%= render_slot(@inner_block) %>
       </body>
