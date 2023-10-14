@@ -1,6 +1,6 @@
-defmodule Elmarismayil.Post do
+defmodule PersonalWebsite.Post do
   @enforce_keys [:id, :title, :body, :date, :excerpt, :tags, :path]
-  defstruct [:id, :title, :body, :date, :excerpt, :tags, :path]
+  defstruct [:id,  :title, :body, :date, :excerpt, :tags, :path]
 
   def build(filename, attrs, body) do
     path = Path.rootname(filename)

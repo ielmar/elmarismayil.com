@@ -1,5 +1,5 @@
-defmodule Elmarismayil.Blog do
-  alias Elmarismayil.Post
+defmodule PersonalWebsite.Blog do
+  alias PersonalWebsite.Post
 
   use NimblePublisher,
     build: Post,
@@ -7,7 +7,8 @@ defmodule Elmarismayil.Blog do
     as: :posts,
     highlighters: [:makeup_elixir, :makeup_erlang]
 
-    @posts Enum.sort_by(@posts, & &1.date, {:desc, Date})
+  @posts Enum.sort_by(@posts, & &1.date, {:desc, Date})
 
-    def all_posts, do: @posts
+  # And finally export them
+  def all_posts, do: @posts
 end
