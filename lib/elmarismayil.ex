@@ -32,7 +32,17 @@ defmodule Elmarismayil do
       <p>I am a full stack developer with more than 20 years of experience.</p>
     </.layout>
     """
-  end
+      end
+
+      def header(assigns) do
+        ~H"""
+        <nav class="bg-white">
+          <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          header
+          </div>
+        </nav>
+        """
+      end
 
   def layout(assigns) do
     ~H"""
@@ -41,8 +51,12 @@ defmodule Elmarismayil do
         <link rel="stylesheet" href="/assets/app.css" />
         <script type="text/javascript" src="/assets/app.js" />
       </head>
-      <body>
-        <%= render_slot(@inner_block) %>
+    <body>
+    <div class="min-h-full">
+    <.header>
+    </.header>
+    <%= render_slot(@inner_block) %>
+    </div>
       </body>
     </html>
     """
