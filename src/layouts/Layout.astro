@@ -1,0 +1,27 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Elmar Ismayil",
+  description = "Experienced full stack developer with over 15 years of expertise in designing, developing, and maintaining web, desktop, and mobile applications.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="[scrollbar-gutter:stable]">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.ico" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-white antialiased">
+    <slot />
+  </body>
+</html>

@@ -1,18 +1,23 @@
-# Elmarismayil
+# elmarismayil.com
 
-To start your Phoenix server:
+Personal site built with [Astro](https://astro.build) + Tailwind CSS v4. Static output, no server or database.
 
-  * Run `mix setup` to install and setup dependencies
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+## Commands
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+| Command           | Action                                |
+| ----------------- | ------------------------------------- |
+| `npm install`     | Install dependencies                  |
+| `npm run dev`     | Start dev server at `localhost:4321`  |
+| `npm run build`   | Build the static site to `./dist/`    |
+| `npm run preview` | Preview the production build locally  |
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+## Structure
 
-## Learn more
+- `src/pages/` — routes (one `.astro` file per page)
+- `src/layouts/` — shared page shell
+- `src/styles/global.css` — Tailwind entry + theme tokens
+- `public/` — static assets served as-is (favicon, robots.txt, images)
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+## Deploy
+
+Outputs plain static files to `dist/` — deploy to any static host (Cloudflare Pages, Vercel, Netlify). Build command `npm run build`, output dir `dist`.
