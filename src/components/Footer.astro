@@ -1,0 +1,49 @@
+---
+const year = new Date().getFullYear();
+const nav = [
+  { label: "Services", href: "#services" },
+  { label: "Work", href: "#work" },
+  { label: "Process", href: "#process" },
+  { label: "About", href: "#about" },
+  { label: "FAQ", href: "#faq" },
+];
+const email = "bamazy@gmail.com";
+---
+
+<footer class="border-t border-line bg-paper">
+  <div class="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+    <div class="flex flex-col gap-10 sm:flex-row sm:items-start sm:justify-between">
+      <div class="max-w-sm">
+        <a href="#top" class="flex items-center gap-2.5">
+          <span class="grid size-8 place-items-center rounded-lg bg-ink text-[13px] font-extrabold text-white">EI</span>
+          <span class="text-[15px] font-semibold tracking-tight">Elmar Ismayil</span>
+        </a>
+        <p class="mt-4 text-[14.5px] leading-relaxed text-ink-500">
+          Full-stack developer building fast, reliable web, mobile, and desktop apps for
+          founders and teams.
+        </p>
+        <a href="#contact" class="mt-5 inline-flex items-center gap-1.5 text-[14px] font-semibold text-ink link-line">
+          Start a project →
+        </a>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <span class="text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-400">Explore</span>
+        {nav.map((n) => (
+          <a href={n.href} class="text-[14.5px] text-ink-500 transition-colors hover:text-ink">{n.label}</a>
+        ))}
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <span class="text-[12px] font-semibold uppercase tracking-[0.16em] text-ink-400">Get in touch</span>
+        <a href={`mailto:${email}`} class="text-[14.5px] text-ink-500 transition-colors hover:text-ink">{email}</a>
+        <p class="text-[14.5px] text-ink-500">Remote · Working worldwide</p>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-line pt-6 sm:flex-row">
+      <p class="text-[13px] text-ink-400">© {year} Elmar Ismayil. All rights reserved.</p>
+      <p class="text-[13px] text-ink-400">Built with Astro · Hosted on Cloudflare</p>
+    </div>
+  </div>
+</footer>

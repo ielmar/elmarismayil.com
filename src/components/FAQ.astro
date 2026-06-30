@@ -1,0 +1,57 @@
+---
+const faqs = [
+  {
+    q: "How much does a project cost?",
+    a: "It depends on scope, but I'll always give you a clear, fixed quote before any work starts — no open-ended hourly surprises. A focused MVP typically starts in the low five figures; smaller fixes and audits cost much less. The discovery call is free.",
+  },
+  {
+    q: "How long until I see something working?",
+    a: "Fast. I ship in weekly increments, so you'll usually see a working slice within the first week or two — not months of silence followed by a big reveal.",
+  },
+  {
+    q: "Do you work with non-technical founders?",
+    a: "Often. A big part of my job is translating between business goals and technical reality in plain English, and helping you make smart trade-offs without needing a CS degree.",
+  },
+  {
+    q: "Can you take over an existing or stalled project?",
+    a: "Yes. I regularly pick up legacy codebases and stalled builds, audit what's there, stabilise it, and get delivery moving again with a clear plan.",
+  },
+  {
+    q: "What happens after launch?",
+    a: "You get clean documentation and a working handover. I stay available for fixes, improvements, and the next phase — there's no lock-in, just an ongoing partner when you need one.",
+  },
+  {
+    q: "Where are you based and how do we work together?",
+    a: "I work remotely with clients across time zones. We'll use whatever fits you — email, calls, Slack, or your project tool of choice — with regular demos so you're never in the dark.",
+  },
+];
+---
+
+<section id="faq" class="scroll-mt-24 bg-paper-2 py-24 sm:py-28">
+  <div class="mx-auto max-w-3xl px-5 sm:px-8">
+    <div class="text-center">
+      <p class="reveal text-[13px] font-semibold uppercase tracking-[0.18em] text-brand">
+        FAQ
+      </p>
+      <h2 class="reveal mt-3 text-3xl font-extrabold tracking-tight text-ink sm:text-[2.6rem] sm:leading-[1.1]" style="transition-delay:60ms">
+        Questions, answered
+      </h2>
+    </div>
+
+    <div class="reveal mt-12 divide-y divide-line overflow-hidden rounded-2xl border border-line bg-paper" style="transition-delay:100ms">
+      {
+        faqs.map((f) => (
+          <details class="group">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-[16px] font-semibold text-ink transition-colors hover:text-brand [&::-webkit-details-marker]:hidden">
+              {f.q}
+              <span class="grid size-7 shrink-0 place-items-center rounded-full border border-line text-ink-400 transition-all group-open:rotate-45 group-open:border-brand group-open:text-brand">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </summary>
+            <p class="px-6 pb-5 text-[15px] leading-relaxed text-ink-500">{f.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

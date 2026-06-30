@@ -1,0 +1,94 @@
+---
+// NOTE: Replace with real projects, links, and metrics.
+const projects = [
+  {
+    name: "SaaS Analytics Platform",
+    type: "Web App",
+    blurb:
+      "A multi-tenant dashboard processing millions of events. Rebuilt the front end for speed and shipped a usage-based billing flow.",
+    result: "Page loads cut from 4s to under 1s",
+    tags: ["Next.js", "TypeScript", "PostgreSQL"],
+    accent: "from-[#fd4f00] to-[#ff8a4c]",
+  },
+  {
+    name: "On-Demand Booking App",
+    type: "Mobile",
+    blurb:
+      "Cross-platform iOS & Android app for scheduling and payments, with offline support and real-time availability.",
+    result: "Launched on both stores in 10 weeks",
+    tags: ["React Native", "Expo", "Node.js"],
+    accent: "from-[#0c0a09] to-[#57534e]",
+  },
+  {
+    name: "E-commerce Rebuild",
+    type: "Web App",
+    blurb:
+      "Replatformed a legacy storefront onto a modern stack — faster checkout, cleaner admin, and a headless CMS.",
+    result: "+28% conversion after launch",
+    tags: ["React", "PHP", "Stripe"],
+    accent: "from-[#1f6feb] to-[#5aa9ff]",
+  },
+  {
+    name: "Internal Operations Tool",
+    type: "Desktop / Web",
+    blurb:
+      "A custom tool that replaced a tangle of spreadsheets — role-based access, audit trails, and one-click reporting.",
+    result: "Saved the team ~12 hours/week",
+    tags: ["Electron", "TypeScript", "SQLite"],
+    accent: "from-[#16a34a] to-[#4ade80]",
+  },
+];
+---
+
+<section id="work" class="scroll-mt-24 bg-paper-2 py-24 sm:py-28">
+  <div class="mx-auto max-w-6xl px-5 sm:px-8">
+    <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+      <div class="max-w-2xl">
+        <p class="reveal text-[13px] font-semibold uppercase tracking-[0.18em] text-brand">
+          Selected work
+        </p>
+        <h2 class="reveal mt-3 text-3xl font-extrabold tracking-tight text-ink sm:text-[2.6rem] sm:leading-[1.1]" style="transition-delay:60ms">
+          Results, not just screenshots
+        </h2>
+      </div>
+      <a href="#contact" class="reveal link-line hidden text-[15px] font-semibold text-ink sm:inline-block" style="transition-delay:80ms">
+        Have a project like these? Let's talk →
+      </a>
+    </div>
+
+    <div class="mt-14 grid gap-5 lg:grid-cols-2">
+      {
+        projects.map((p, i) => (
+          <article
+            class="reveal group flex flex-col overflow-hidden rounded-2xl border border-line bg-paper transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_-24px_rgba(12,10,9,0.3)]"
+            style={`transition-delay:${(i % 2) * 70}ms`}
+          >
+            <div class={`relative h-44 overflow-hidden bg-gradient-to-br ${p.accent}`}>
+              <div class="absolute inset-0 opacity-20" style="background-image:radial-gradient(circle at 20% 20%, #fff 0, transparent 40%), radial-gradient(circle at 80% 70%, #fff 0, transparent 35%)" />
+              <span class="absolute left-4 top-4 rounded-full bg-white/15 px-3 py-1 text-[12px] font-semibold text-white backdrop-blur-sm">
+                {p.type}
+              </span>
+              <div class="absolute bottom-4 left-4 right-4">
+                <span class="inline-flex items-center gap-1.5 rounded-lg bg-white/95 px-3 py-1.5 text-[13px] font-bold text-ink">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fd4f00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8M21 7v5"/></svg>
+                  {p.result}
+                </span>
+              </div>
+            </div>
+            <div class="flex flex-1 flex-col p-6">
+              <h3 class="text-xl font-bold tracking-tight text-ink transition-colors group-hover:text-brand">
+                {p.name}
+              </h3>
+              <p class="mt-2 flex-1 text-[15px] leading-relaxed text-ink-500">{p.blurb}</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                {p.tags.map((t) => (
+                  <span class="rounded-md bg-paper-2 px-2.5 py-1 text-[12.5px] font-medium text-ink-700">{t}</span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

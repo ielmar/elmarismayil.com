@@ -12,6 +12,7 @@
     "cf:preview": "astro build && wrangler dev"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
     "astro": "^5.6.1"
   },
   "devDependencies": {

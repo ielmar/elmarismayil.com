@@ -1,5 +1,128 @@
 @import "tailwindcss";
 
 @theme {
+  /* Brand */
   --color-brand: #fd4f00;
+  --color-brand-600: #e84700;
+  --color-brand-50: #fff3ec;
+
+  /* Neutral ink scale (warm) */
+  --color-ink: #0c0a09;
+  --color-ink-700: #292524;
+  --color-ink-500: #57534e;
+  --color-ink-400: #78716c;
+  --color-line: #ece9e6;
+  --color-paper: #ffffff;
+  --color-paper-2: #faf8f6;
+
+  /* Type */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-feature-settings: "cv01", "cv03", "ss01";
+  color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-brand);
+  color: #fff;
+}
+
+/* Focus ring */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s var(--ease-out-soft),
+    transform 0.7s var(--ease-out-soft);
+  will-change: opacity, transform;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .marquee-track {
+    animation: none !important;
+  }
+}
+
+/* Subtle grid backdrop */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(12, 10, 9, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(12, 10, 9, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+
+/* Marquee */
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Link underline grow */
+.link-line {
+  background-image: linear-gradient(var(--color-brand), var(--color-brand));
+  background-size: 0% 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.35s var(--ease-out-soft);
+}
+.link-line:hover {
+  background-size: 100% 2px;
 }
