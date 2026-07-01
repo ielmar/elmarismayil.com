@@ -1,0 +1,152 @@
+---
+// Productized, fixed-price MVP packages — adapted from the wedomvp offering.
+// NOTE: Prices are starting points. Confirm final numbers before going live.
+const packages = [
+  {
+    name: "Launch MVP",
+    timeline: "15 days",
+    price: "$6,000",
+    tagline: "For simple tools & proof-of-concepts",
+    features: [
+      "One core feature, built end-to-end",
+      "Clean, responsive front-end",
+      "Essential backend & database",
+      "Deployed & live",
+    ],
+    popular: false,
+  },
+  {
+    name: "Growth MVP",
+    timeline: "30 days",
+    price: "$12,000",
+    tagline: "The sweet spot for most startups",
+    features: [
+      "Multiple connected features",
+      "User accounts & authentication",
+      "Dashboard / admin interface",
+      "Key third-party integrations",
+      "2 weeks post-launch support",
+    ],
+    popular: true,
+  },
+  {
+    name: "Scale MVP",
+    timeline: "45 days",
+    price: "$18,000",
+    tagline: "For complex, multi-part products",
+    features: [
+      "Full product with admin panel",
+      "Payments & subscriptions",
+      "Custom API & integrations",
+      "Performance-hardened & scalable",
+      "1 month post-launch support",
+    ],
+    popular: false,
+  },
+];
+---
+
+<section id="packages" class="scroll-mt-24 bg-paper-2 py-24 sm:py-28">
+  <div class="mx-auto max-w-6xl px-5 sm:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="reveal text-[13px] font-semibold uppercase tracking-[0.18em] text-brand">
+        Fixed-price MVPs
+      </p>
+      <h2 class="reveal mt-3 text-3xl font-extrabold tracking-tight text-ink sm:text-[2.6rem] sm:leading-[1.1]" style="transition-delay:60ms">
+        Know the price before we start
+      </h2>
+      <p class="reveal mt-4 text-[17px] leading-relaxed text-ink-500" style="transition-delay:100ms">
+        No open-ended hourly rates or scope-creep surprises. Pick a timeline,
+        get a working product for a fixed price — and start learning from real users fast.
+      </p>
+    </div>
+
+    <div class="mt-14 grid items-start gap-5 lg:grid-cols-3">
+      {
+        packages.map((p, i) => (
+          <article
+            class={`reveal relative flex flex-col rounded-2xl border p-7 transition-all duration-300 ${
+              p.popular
+                ? "border-transparent bg-ink text-white shadow-[0_28px_60px_-24px_rgba(12,10,9,0.55)] lg:-mt-4 lg:mb-4"
+                : "border-line bg-paper hover:-translate-y-1 hover:border-ink/15 hover:shadow-[0_18px_40px_-20px_rgba(12,10,9,0.25)]"
+            }`}
+            style={`transition-delay:${i * 70}ms`}
+          >
+            {p.popular && (
+              <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand px-3.5 py-1 text-[12px] font-bold uppercase tracking-wide text-white shadow-lg shadow-brand/30">
+                Most popular
+              </span>
+            )}
+
+            <div class="flex items-center justify-between">
+              <h3 class={`text-xl font-bold tracking-tight ${p.popular ? "text-white" : "text-ink"}`}>
+                {p.name}
+              </h3>
+              <span
+                class={`rounded-full px-3 py-1 text-[12px] font-semibold ${
+                  p.popular ? "bg-white/10 text-white" : "bg-brand-50 text-brand"
+                }`}
+              >
+                {p.timeline}
+              </span>
+            </div>
+
+            <p class={`mt-1.5 text-[14px] ${p.popular ? "text-white/60" : "text-ink-400"}`}>
+              {p.tagline}
+            </p>
+
+            <div class="mt-6 flex items-baseline gap-1.5">
+              <span class={`text-[13px] font-medium ${p.popular ? "text-white/50" : "text-ink-400"}`}>
+                from
+              </span>
+              <span class={`text-4xl font-extrabold tracking-tight ${p.popular ? "text-white" : "text-ink"}`}>
+                {p.price}
+              </span>
+            </div>
+
+            <ul class="mt-6 flex-1 space-y-3">
+              {p.features.map((f) => (
+                <li class={`flex items-start gap-2.5 text-[14.5px] ${p.popular ? "text-white/85" : "text-ink-700"}`}>
+                  <svg
+                    class="mt-0.5 shrink-0"
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fd4f00"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                  {f}
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="#contact"
+              class={`mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[15px] font-semibold transition-all ${
+                p.popular
+                  ? "bg-brand text-white shadow-lg shadow-brand/25 hover:bg-brand-600"
+                  : "border border-line bg-paper text-ink hover:border-ink/30"
+              }`}
+            >
+              Start this package
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </article>
+        ))
+      }
+    </div>
+
+    <p class="reveal mx-auto mt-10 max-w-2xl text-center text-[14px] leading-relaxed text-ink-400" style="transition-delay:80ms">
+      Every build is scoped in a free call first — these are starting points, not rigid boxes.
+      Something bigger or more custom?{" "}
+      <a href="#contact" class="link-line font-semibold text-ink-700">Request a custom quote</a>.
+    </p>
+  </div>
+</section>
