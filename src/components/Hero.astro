@@ -11,7 +11,7 @@ const stack = [
 ];
 ---
 
-<section id="top" class="relative overflow-hidden pt-32 sm:pt-40">
+<section id="top" class="relative overflow-hidden pb-20 pt-32 sm:pb-28 sm:pt-40">
   <!-- backdrop -->
   <div class="bg-grid pointer-events-none absolute inset-0 -z-10"></div>
   <div
@@ -28,7 +28,7 @@ const stack = [
           <span class="absolute inline-flex size-full animate-ping rounded-full bg-brand opacity-60"></span>
           <span class="relative inline-flex size-2 rounded-full bg-brand"></span>
         </span>
-        Available for new projects — 2025
+        Available for new projects
       </div>
 
       <h1
@@ -89,7 +89,14 @@ const stack = [
     <div class="marquee">
       <div class="marquee-track gap-3">
         {
-          [...stack, ...stack].map((t) => (
+          [
+            ...stack,
+            ...stack,
+            ...stack,
+            ...stack,
+            ...stack,
+            ...stack,
+          ].map((t) => (
             <span class="whitespace-nowrap rounded-full border border-line bg-paper-2 px-4 py-2 text-[14px] font-medium text-ink-700">
               {t}
             </span>
